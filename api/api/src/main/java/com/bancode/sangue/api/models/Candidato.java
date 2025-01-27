@@ -1,6 +1,7 @@
 package com.bancode.sangue.api.models;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "candidatos")
@@ -10,12 +11,24 @@ public class Candidato {
     private Long id;
 
     private String nome;
-    private Integer idade;
-    private Double peso;
-    private Double altura;
+    private String cpf;
+    private String rg;
+    private LocalDate dataNasc;
     private String sexo;
-    private String tipoSanguineo;
+    private String mae;
+    private String pai;
+    private String email;
+    private String cep;
+    private String endereco;
+    private Integer numero;
+    private String bairro;
+    private String cidade;
     private String estado;
+    private String telefoneFixo;
+    private String celular;
+    private Double altura;
+    private Double peso;
+    private String tipoSanguineo;
 
     public Long getId() {
         return id;
@@ -33,28 +46,28 @@ public class Candidato {
         this.nome = nome;
     }
 
-    public Integer getIdade() {
-        return idade;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public Double getPeso() {
-        return peso;
+    public String getRg() {
+        return rg;
     }
 
-    public void setPeso(Double peso) {
-        this.peso = peso;
+    public void setRg(String rg) {
+        this.rg = rg;
     }
 
-    public Double getAltura() {
-        return altura;
+    public LocalDate getDataNasc() {
+        return dataNasc;
     }
 
-    public void setAltura(Double altura) {
-        this.altura = altura;
+    public void setDataNasc(LocalDate dataNasc) {
+        this.dataNasc = dataNasc;
     }
 
     public String getSexo() {
@@ -65,12 +78,68 @@ public class Candidato {
         this.sexo = sexo;
     }
 
-    public String getTipoSanguineo() {
-        return tipoSanguineo;
+    public String getMae() {
+        return mae;
     }
 
-    public void setTipoSanguineo(String tipoSanguineo) {
-        this.tipoSanguineo = tipoSanguineo;
+    public void setMae(String mae) {
+        this.mae = mae;
+    }
+
+    public String getPai() {
+        return pai;
+    }
+
+    public void setPai(String pai) {
+        this.pai = pai;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     public String getEstado() {
@@ -81,17 +150,69 @@ public class Candidato {
         this.estado = estado;
     }
 
+    public String getTelefoneFixo() {
+        return telefoneFixo;
+    }
+
+    public void setTelefoneFixo(String telefoneFixo) {
+        this.telefoneFixo = telefoneFixo;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public Double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Double altura) {
+        this.altura = altura;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public String getTipoSanguineo() {
+        return tipoSanguineo;
+    }
+
+    public void setTipoSanguineo(String tipoSanguineo) {
+        this.tipoSanguineo = tipoSanguineo;
+    }
+
     @Override
     public String toString() {
         return "Candidato{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", idade=" + idade +
-                ", peso=" + peso +
-                ", altura=" + altura +
+                ", cpf='" + cpf + '\'' +
+                ", rg='" + rg + '\'' +
+                ", dataNasc=" + dataNasc +
                 ", sexo='" + sexo + '\'' +
-                ", tipoSanguineo='" + tipoSanguineo + '\'' +
+                ", mae='" + mae + '\'' +
+                ", pai='" + pai + '\'' +
+                ", email='" + email + '\'' +
+                ", cep='" + cep + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", numero=" + numero +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
+                ", telefoneFixo='" + telefoneFixo + '\'' +
+                ", celular='" + celular + '\'' +
+                ", altura=" + altura +
+                ", peso=" + peso +
+                ", tipoSanguineo='" + tipoSanguineo + '\'' +
                 '}';
     }
 }
