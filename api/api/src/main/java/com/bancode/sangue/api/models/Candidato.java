@@ -1,8 +1,10 @@
 package com.bancode.sangue.api.models;
 
-import com.bancode.sangue.api.services.CustomDateDeserializer;
+import com.bancode.sangue.api.config.CryptoConverter;
+import com.bancode.sangue.api.config.CustomDateDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
+import jakarta.persistence.Convert;
 
 import java.time.LocalDate;
 
@@ -13,24 +15,31 @@ public class Candidato {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Convert(converter = CryptoConverter.class)
     private String nome;
-    private int idade;
+    @Convert(converter = CryptoConverter.class)
     private String cpf;
+    @Convert(converter = CryptoConverter.class)
     private String rg;
+    @Convert(converter = CryptoConverter.class)
+    private String email;
+    @Convert(converter = CryptoConverter.class)
+    private String telefone_fixo;
+    @Convert(converter = CryptoConverter.class)
+    private String celular;
     @JsonDeserialize(using = CustomDateDeserializer.class)
     private LocalDate data_nasc;
+
+    private int idade;
     private String sexo;
     private String mae;
     private String pai;
-    private String email;
     private String cep;
     private String endereco;
     private Integer numero;
     private String bairro;
     private String cidade;
     private String estado;
-    private String telefone_fixo;
-    private String celular;
     private Double altura;
     private Double peso;
     private String tipo_sanguineo;
