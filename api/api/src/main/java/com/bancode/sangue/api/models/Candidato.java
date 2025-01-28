@@ -1,6 +1,9 @@
 package com.bancode.sangue.api.models;
 
+import com.bancode.sangue.api.services.CustomDateDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
@@ -11,9 +14,11 @@ public class Candidato {
     private Long id;
 
     private String nome;
+    private int idade;
     private String cpf;
     private String rg;
-    private LocalDate dataNasc;
+    @JsonDeserialize(using = CustomDateDeserializer.class)
+    private LocalDate data_nasc;
     private String sexo;
     private String mae;
     private String pai;
@@ -24,11 +29,11 @@ public class Candidato {
     private String bairro;
     private String cidade;
     private String estado;
-    private String telefoneFixo;
+    private String telefone_fixo;
     private String celular;
     private Double altura;
     private Double peso;
-    private String tipoSanguineo;
+    private String tipo_sanguineo;
 
     public Long getId() {
         return id;
@@ -44,6 +49,14 @@ public class Candidato {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     public String getCpf() {
@@ -62,12 +75,12 @@ public class Candidato {
         this.rg = rg;
     }
 
-    public LocalDate getDataNasc() {
-        return dataNasc;
+    public LocalDate getData_nasc() {
+        return data_nasc;
     }
 
-    public void setDataNasc(LocalDate dataNasc) {
-        this.dataNasc = dataNasc;
+    public void setData_nasc(LocalDate dataNasc) {
+        this.data_nasc = dataNasc;
     }
 
     public String getSexo() {
@@ -150,12 +163,12 @@ public class Candidato {
         this.estado = estado;
     }
 
-    public String getTelefoneFixo() {
-        return telefoneFixo;
+    public String getTelefone_fixo() {
+        return telefone_fixo;
     }
 
-    public void setTelefoneFixo(String telefoneFixo) {
-        this.telefoneFixo = telefoneFixo;
+    public void setTelefone_fixo(String telefoneFixo) {
+        this.telefone_fixo = telefoneFixo;
     }
 
     public String getCelular() {
@@ -182,12 +195,12 @@ public class Candidato {
         this.peso = peso;
     }
 
-    public String getTipoSanguineo() {
-        return tipoSanguineo;
+    public String getTipo_sanguineo() {
+        return tipo_sanguineo;
     }
 
-    public void setTipoSanguineo(String tipoSanguineo) {
-        this.tipoSanguineo = tipoSanguineo;
+    public void setTipo_sanguineo(String tipoSanguineo) {
+        this.tipo_sanguineo = tipoSanguineo;
     }
 
     @Override
@@ -195,9 +208,10 @@ public class Candidato {
         return "Candidato{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
+                ", idade=" + idade +
                 ", cpf='" + cpf + '\'' +
                 ", rg='" + rg + '\'' +
-                ", dataNasc=" + dataNasc +
+                ", dataNasc=" + data_nasc +
                 ", sexo='" + sexo + '\'' +
                 ", mae='" + mae + '\'' +
                 ", pai='" + pai + '\'' +
@@ -208,11 +222,11 @@ public class Candidato {
                 ", bairro='" + bairro + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
-                ", telefoneFixo='" + telefoneFixo + '\'' +
+                ", telefoneFixo='" + telefone_fixo + '\'' +
                 ", celular='" + celular + '\'' +
                 ", altura=" + altura +
                 ", peso=" + peso +
-                ", tipoSanguineo='" + tipoSanguineo + '\'' +
+                ", tipoSanguineo='" + tipo_sanguineo + '\'' +
                 '}';
     }
 }
